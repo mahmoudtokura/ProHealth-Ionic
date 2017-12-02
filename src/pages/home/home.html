@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-align: justify>Latest News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list *ngFor="let data of wordPressData; let i = index;">
+
+        <ion-item (click)="fullPost(data)">
+          <ion-avatar item-start>
+            <div *ngIf="data.better_featured_image == null; else elseBlock">
+              <img [src]=postImage>
+            </div>
+            <ng-template #elseBlock>
+                <img style="max-height: 400px" [src]=data.better_featured_image.source_url>
+            </ng-template>
+          </ion-avatar>
+          <ion-grid>
+              <ion-row>
+                <ion-col col-9>
+                    <h2 text-uppercase no-padding no-margin class="ellipsis"> 
+                      {{data.title.rendered }}
+                    </h2>
+                </ion-col>
+                <ion-col col-3 style="color:blue">view</ion-col>
+              </ion-row>
+            </ion-grid>
+          <p [innerHTML] = data.excerpt.rendered text-justify></p>
+        </ion-item>
+      </ion-list>
+</ion-content>
