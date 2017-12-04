@@ -10,12 +10,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WpProvider } from '../providers/wp/wp';
-import { TipsPage } from '../pages/tips/tips';
 
 @NgModule({
   declarations: [
     MyApp,
-    TipsPage,
     HomePage,
     TabsPage
   ],
@@ -27,7 +25,6 @@ import { TipsPage } from '../pages/tips/tips';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    TipsPage,
     HomePage,
     TabsPage
   ],

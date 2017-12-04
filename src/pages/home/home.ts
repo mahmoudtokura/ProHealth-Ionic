@@ -11,7 +11,7 @@ export class HomePage {
   
   postSubscribe: Subscription;
   wordPressData: any;
-  postImage="assets/images/icon-image/accident-2161956_640.jpg";
+  postImage="assets/imgs/images/logo.png";
 
   constructor(public navCtrl: NavController, private wpData: WpProvider) {
     this.wpData.getPost().subscribe(data=>{
