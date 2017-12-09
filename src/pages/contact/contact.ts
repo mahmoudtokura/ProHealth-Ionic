@@ -16,6 +16,18 @@ import { EmailComposer } from '@ionic-native/email-composer';
 })
 export class ContactPage {
 
+  items = [
+    {
+      "title":"How to get a plan"
+    },
+    {
+      "title":"How to change a plan"
+    },
+    {
+      "title":"How to change a hospital"
+    }
+  ]
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private emailComposer: EmailComposer) {
   }
 

@@ -1,12 +1,22 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title text-align: justify>Latest News</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Latest News</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-list *ngFor="let data of wordPressData; let i = index;">
+    <p center>Pull down to refreash</p>
+    <div class="centered-spinner">
+      <ion-spinner name="bubbles" *ngIf="loading == 0 || !wordPressData"></ion-spinner>
+    </div>
+      
+      <p *ngIf="loadingTime == 0" text-center>{{loadingError}}</p>
+        <ion-refresher (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content pullingIcon="arrow-down" pullingText="pull down" refreshingText="Loading...">
+          </ion-refresher-content>
+        </ion-refresher>
 
+    <ion-list *ngFor="let data of wordPressData | async">
         <ion-item (click)="fullPost(data)">
           <ion-avatar item-start>
             <div *ngIf="data.better_featured_image == null; else elseBlock">
