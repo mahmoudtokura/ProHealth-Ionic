@@ -1,36 +1,58 @@
 <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-title>Daily Living Tips</ion-title>
+  <ion-navbar color="light">
+    <ion-title style="text-align: center">Customer Help Menu</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="card-background-page">
-  
-    <ion-card>
-      <img src="assets/imgs/images/fitness.jpeg"/>
-      <div class="card-title">Fitness</div>
-      <div class="card-subtitle">Stay in shape</div>
-    </ion-card>
-  
-    <ion-card>
-      <img src="assets/imgs/images/food.jpeg"/>
-      <div class="card-title">Healthy Eating</div>
-      <div class="card-subtitle">Recipe for health</div>
-    </ion-card>
-  
-    <ion-card>
-      <img src="assets/imgs/images/first-aid-1732757_640.jpg"/>
-      <div class="card-title">First Aid</div>
-      <div class="card-subtitle">Saves life</div>
-    </ion-card>
-  
-    <ion-card>
-      <img src="assets/imgs/images/doctors-hands.jpg"/>
-      <div class="card-title" style="color: black;">Common Symptoms</div>
-      <div class="card-subtitle">Be informed</div>
-    </ion-card>
+<ion-content class="card-background-page bgcolor">
+    <div style="align-content: center">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-card style="background-color: transparent; width: 200px">
+                      <img src="assets/imgs/icons/008-injury.png"/>
+                    </ion-card>
+                    <div class="card-subtitle"><h4>Health Plans</h4></div>
+                </ion-col>
+              <ion-col col-6 (click)="changeHospital()">
+                  <ion-card style="background-color: transparent; width: 200px">
+                    <img src="assets/imgs/icons/010-medical-2.png"/>
+                  </ion-card>
+                  <div class="card-subtitle"><h4>Change Hospital</h4></div>
+              </ion-col>
+            </ion-row>
+            <ion-row class="row-class">
+                <ion-col col-6>
+                    <ion-card style="background-color: transparent; width: 200px">
+                      <img src="assets/imgs/icons/001-contract-1.png"/>
+                    </ion-card>
+                    <div class="card-subtitle"><h4>Sign Up</h4></div>
+                </ion-col>
+              <ion-col col-6>
+                  <ion-card style="background-color: transparent; width: 200px">
+                    <img src="assets/imgs/icons/012-medical.png"/>
+                  </ion-card>
+                  <div class="card-subtitle"><h4>Change Hospital</h4></div>
+              </ion-col>
+            </ion-row>
+            <ion-row class="row-class">
+                <ion-col col-6>
+                    <ion-card style="background-color: transparent; width: 200px">
+                      <img src="assets/imgs/icons/001-contract-1.png"/>
+                    </ion-card>
+                    <div class="card-subtitle"><h4>Change Hospital</h4></div>
+                </ion-col>
+              <ion-col col-6>
+                  <ion-card style="background-color: transparent; width: 200px">
+                    <img src="assets/imgs/icons/002-writing.png"/>
+                  </ion-card>
+                  <div class="card-subtitle"><h4>Change Hospital</h4></div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+    </div>
   
   </ion-content>

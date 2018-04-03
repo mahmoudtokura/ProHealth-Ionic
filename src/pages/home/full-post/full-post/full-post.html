@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Full Update</ion-title>
+    <ion-title style="text-align: center">Full Update</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content>
+<ion-content class="bgcolor">
     
       <ion-card>
       <ion-card-content>
@@ -24,10 +24,5 @@
           <p [innerHTML] = post.content.rendered text-justify></p>
       </ion-card-content>
     </ion-card>
-      <ion-fab middle right>
-          <button ion-fab (click)="regularShare()">
-            <ion-icon name="share"></ion-icon>
-          </button>
-        </ion-fab>
     </ion-content>
     

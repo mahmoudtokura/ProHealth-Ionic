@@ -1,8 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { ToastController } from 'ionic-angular/components/toast/toast-controller';
-
 /*
   Generated class for the WpProvider provider.
 
@@ -12,30 +9,20 @@ import { ToastController } from 'ionic-angular/components/toast/toast-controller
 @Injectable()
 export class WpProvider {
 
-  baseUrl = "http://pro-health.gizodynamics.com.ng/wp-json/wp/v2/posts?categories=29";
+  baseUrl = "http://prohealthhmo.com.ng/wp-json/wp/v2/posts?categories=29";
+  tipsUrl = "http://prohealthhmo.com.ng/wp-json/wp/v2/posts?categories=81";
 
-  post: Observable<any>;
-  postKey = 'my-post-group'
-
-  constructor(public http: HttpClient, private toastCtrl: ToastController) {
+  constructor(public http: HttpClient) {
     console.log('Hello WpProvider Provider');
   }
 
-  getPost(){
-    console.log("getPost() called")
-    let cacheKey = this.baseUrl;
-    
-    let req = this.http.get(this.baseUrl).map( resp => {
-      let toast = this.toastCtrl.create({
-        message: 'Loading data from server ....',
-        duration: 2000
-      })
-      toast.present();
-      return resp
-    });
-    
-    
-    return this.post
+  getPost(){    
+    return this.http.get(this.baseUrl);
   }
+
+  getTips(){  
+    return this.http.get(this.tipsUrl);
+  }
+  
 
 }

@@ -1,5 +1,9 @@
 page-home {
 
+    .bgcolor{
+        background: color($colors, bgcolor)
+      }
+
     .ellipsis {
         white-space: nowrap;
         overflow: hidden;

@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Subscription } from "rxjs/Subscription";
-import { CacheService } from 'ionic-cache';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { Observable } from 'rxjs/Observable';
-import { HttpClient } from '@angular/common/http';
+import { WpProvider } from '../../providers/wp/wp';
 
 @Component({
   selector: 'page-home',
@@ -17,15 +16,18 @@ export class HomePage {
   
   loading = 1;
   loadingTime = 1;
-  loadingError = "Check your internet connection";
 
   postSubscribe: Subscription;
-  wordPressData: Observable<any>;
+  wordPressData;
   postImage="assets/imgs/images/logo.png";
 
-  constructor(public navCtrl: NavController, private cache: CacheService, public http: HttpClient, private toastCtrl: ToastController) {  
+  constructor(public navCtrl: NavController, private wp: WpProvider, private toastCtrl: ToastController) {  
     this.getPost()
     if(this.wordPressData == null || this.wordPressData == undefined ){
+      this.loading=1;
+      this.loadingTime=1;
+    }
+    else{
       this.loading=0;
       this.loadingTime=0;
     }
@@ -33,41 +35,42 @@ export class HomePage {
 
   getPost(refresher?){
     this.loading = 0;
-    let baseUrl = "http://pro-health.gizodynamics.com.ng/wp-json/wp/v2/posts?categories=29";
-    let toast = this.toastCtrl.create({
-      message: 'Loading data from server ....',
-      duration: 2000
-    })
-    toast.present();
-    let req = this.http.get(baseUrl)
-    .map( resp => {
-      this.loading=1;
-      return resp
+    this.wp.getPost().subscribe(data => {
+      this.wordPressData = data;
+      setTimeout(() => {
+        if(this.wordPressData == null || this.wordPressData == undefined ){
+          let errorToast = this.toastCtrl.create({
+            message: 'Slow network, check connection....',
+            duration: 5000
+          });
+          errorToast.present();
+        }
+      }, 3000);
     });
-    
-    let ttl = 60 * 60 * 12
+
+    let toast = this.toastCtrl.create({
+      message: 'Loading latest news ....',
+      duration: 3000
+    });
+
+    toast.present();
 
     if(refresher){
-      let delayType = 'all';
-      this.wordPressData = this.cache.loadFromDelayedObservable(baseUrl, req, this.postKey, ttl, delayType);
-
-      this.wordPressData.subscribe(data => {
+      this.wp.getPost().subscribe(data => {
         this.loading=1;
+        this.wordPressData = data;
         refresher.complete()
       });
-      console.log(this.wordPressData)
     }
     else{
-      this.wordPressData = this.cache.loadFromObservable(baseUrl, req, this.postKey, ttl);
       this.loading=1;
-      console.log(this.wordPressData)
     }
 
   }
   
 
   ionViewWillEnter(){
-
+    
   }
 
   doRefresh(refresher) {

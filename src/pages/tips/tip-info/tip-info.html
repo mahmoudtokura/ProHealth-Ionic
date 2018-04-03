@@ -1,0 +1,38 @@
+<!--
+  Generated template for the TipInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Prohealth Living Tips</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page bgcolor">
+    <p center>Pull down to refreash</p>
+    <div class="centered-spinner">
+      <ion-spinner name="bubbles" *ngIf="loading == 0 || !tipsData"></ion-spinner>
+    </div>
+      
+      <p *ngIf="loadingTime == 0" text-center>{{loadingError}}</p>
+        <ion-refresher (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content pullingIcon="arrow-down" pullingText="pull down" refreshingText="Loading...">
+          </ion-refresher-content>
+        </ion-refresher>
+  
+  <ion-card *ngFor="let tip of tipsData" (click)="fullPost(tip)">
+    <div *ngIf="tip.better_featured_image == null; else elseBlock">
+      <img [src]=defultImage>
+    </div>
+    <ng-template #elseBlock>
+        <img style="max-height: 400px" [src]=tip.better_featured_image.source_url>
+    </ng-template>
+    <div class="card-title">{{ tip.title.rendered }}</div>
+  </ion-card>
+  
+</ion-content>

@@ -22,4 +22,19 @@ export class TipsPage {
     console.log('ionViewDidLoad TipsPage');
   }
 
+  // goToFitness(){
+  //   console.log("Fitness Called")
+  //   this.navCtrl.push("FitnessTipsPage")
+  // }
+
+  goToTip(){
+    this.navCtrl.push("TipInfoPage")
+  }
+
+  changeHospital(){
+    this.navCtrl.push("ChangeHospitalPage")
+    console.log("change clicked");
+    
+  }
+
 }

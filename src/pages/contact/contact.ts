@@ -18,13 +18,22 @@ export class ContactPage {
 
   items = [
     {
-      "title":"How to get a plan"
+      "title":"How to get a plan",
+      "answer":"You can browse through our website and download our PDF brochures or contact our customer care to get information on what plan best fit your lifestyle or organization."
     },
     {
-      "title":"How to change a plan"
+      "title":"How to change a plan",
+      "answer":"You can send us an email through this app or directly enquiry@prohealthhmo.com with you client ID and relevant information and one of our" + 
+      " customer care representatives will contact with 24hours of receiving the email to discuss avaliable plans that" + 
+      " will better suit your need" + 
+      " You can also contact us via phone 0700776432584 to change or update your account information."
     },
     {
-      "title":"How to change a hospital"
+      "title":"How to change a hospital",
+      "answer":"You can send us an email through this app or directly enquiry@prohealthhmo.com with you client ID and relevant information and one of our" + 
+      " customer care representatives will contact with 24hours of receiving the email to discuss avaliable hospital based" + 
+      " on you unique medical needs and also future projects for the health care providers" + 
+      " You can also contact us via phone 0700776432584 to change or update your account information."
     }
   ]
 
@@ -35,12 +44,16 @@ export class ContactPage {
     console.log('ionViewDidLoad ContactPage');
   }
 
+  itemSelected(item){
+    this.navCtrl.push('FaqAnswersPage',{item: item})
+  }
+
   sendEmail(){
     let email = {
-      to: "mahmoudbintokura@gmail.com",
-      cc: "imopumping@gmail.com",
+      to: "enquiry@prohealthhmo.com",
+      cc: "info@prohealthhmo.com",
       subject: "Customer Service from App",
-      body: "Testing email from app"
+      body: "Existing clients should include their, client ID and Name in this email"
     };
     this.emailComposer.open(email);
   }

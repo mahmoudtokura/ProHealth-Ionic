@@ -1,5 +1,8 @@
 page-website {
 
+  .bgcolor{
+    background: color($colors, bgcolor)
+  }
     .card-background-page {
         
           ion-card {

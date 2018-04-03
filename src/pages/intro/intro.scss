@@ -1,4 +1,8 @@
 page-intro {
+
+    .bgcolor{
+      background: color($colors, bgcolor)
+    }
     .bottom {
         padding: $content-padding;
         position: fixed;
