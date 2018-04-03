@@ -32,9 +32,12 @@ export class TipsPage {
   }
 
   changeHospital(){
-    this.navCtrl.push("ChangeHospitalPage")
-    console.log("change clicked");
+    this.navCtrl.push("ChangeHospitalPage");
     
+  }
+
+  questions(){
+    this.navCtrl.push("QuestionsPage");
   }
 
 }
