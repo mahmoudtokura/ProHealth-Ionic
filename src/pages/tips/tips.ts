@@ -40,4 +40,20 @@ export class TipsPage {
     this.navCtrl.push("QuestionsPage");
   }
 
+  planspage(){
+    this.navCtrl.push('PlansPage')
+  }
+
+  feedbackpage(){
+    this.navCtrl.push('FeedbackPage')
+  }
+  
+  Signup(){
+
+  }
+
+  aboutapp(){
+    
+  }
+
 }

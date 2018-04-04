@@ -13,18 +13,55 @@
 </ion-header>
 
 
-<ion-content padding class="bgcolor">
-  <h1>Frequently Asked Question</h1>
-    <ion-list>
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-          {{ item.title }}
-        </button>  
-      </ion-list>
-    
-    <ion-footer>
-        <ion-toolbar>
-            <button ion-button full (click)="sendEmail()">Contact Us</button>
-        </ion-toolbar>
-      </ion-footer>
+<ion-content class="bgcolor">
+  <h3 style="text-align: center">Reach us</h3>
+  <ion-card>
+    <ion-card-header>
+        <ion-icon name="compass" color="primary"></ion-icon> Address
+    </ion-card-header>
+  
+    <ion-card-content>
+      ProHealth HMO Head office
+      BASSAN PLAZA, 
+      Plot 759 Independent Avenue,
+      Central Business District,
+      Abuja.
+    </ion-card-content>  
+  </ion-card>
 
+  <ion-card>
+    <ion-card-header>
+        <ion-icon name="mail" color="primary"></ion-icon> Email
+    </ion-card-header>
+  
+    <ion-card-content>
+      Email: info@prohealthhmo.com
+      Email: enquiry@prohealthhmo.com
+      Tel:0700 PROHEALTH, 0700776432584
+    </ion-card-content>
+  
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+        <ion-icon name="call" color="primary"></ion-icon> Phone
+    </ion-card-header>
+  
+    <ion-card-content>
+      Tel:0700 PROHEALTH, 0700776432584
+    </ion-card-content>
+  
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+        ProHealth HMO Limited (ProHealth) was incorporated with a mission of becoming a world class leading Health Maintenance Organization, providing efficient and affordable health care support services to all Nigerians and neighbouring countries in Africa.
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <button ion-button full (click)="sendEmail()">Enquiries</button>
+  </ion-toolbar>
+</ion-footer>
