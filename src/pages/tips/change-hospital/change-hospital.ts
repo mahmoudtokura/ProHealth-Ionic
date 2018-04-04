@@ -32,8 +32,8 @@ export class ChangeHospitalPage {
   sendEmail(){
     let fullMessage = "Name: "+this.name + "<br><br>" + "Phone Number: "+this.phone_number + "<br><br>" + "Scheme Id No: "+this.scheme_number + "<br><br>" + "Id No: "+this.id_number + "<br><br>" + "Email: "+this.email + "<br><br>" + "Present Hospital: "+ this.present_hospital + "<br><br>" + "New Hospital: " + this.new_hospital + "<br><br>" +"Reason for change: "+this.message
     let email = {
-      to: 'mahmoudbintokura@gmail.com',
-      cc: 'imopumping@gmail.com',
+      to: 'operations@prohealthhmo.com',
+      cc: 'enquiry@prohealthhmo.com',
       bcc: this.email,
       subject: 'Change Hospital Request from mobile app',
       body: fullMessage,

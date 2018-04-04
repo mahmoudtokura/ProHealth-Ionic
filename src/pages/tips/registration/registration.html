@@ -1,5 +1,5 @@
 <!--
-  Generated template for the FeedbackPage page.
+  Generated template for the RegistrationPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,19 +7,35 @@
 <ion-header>
 
   <ion-navbar color="primary">
-      <ion-title style="text-align: center">Feedback</ion-title>
+      <ion-title style="text-align: center">Registration</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <div style="margin-top:40px;">
+        <h3>
+          Fill the form and we will get back to you as soon as possible
+        </h3>
+          or
+        <h3>
+          You can also contact us for registration directly to enquiry@prohealthhmo.com
+        </h3>
+      </div>
+
+      <br>
+      <hr>
 
     <ion-list>
-
         <ion-item>
           <ion-label stacked>FULL NAME</ion-label>
           <ion-input type="text" [(ngModel)]='name'></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>EMAIL</ion-label>
+          <ion-input type="text" [(ngModel)]='email'></ion-input>
         </ion-item>
 
         <ion-item>
@@ -35,11 +51,4 @@
         <button ion-button block (click)="sendEmail()">Send Message</button>
       
       </ion-list>
-    <hr>
-      <div style="margin-top:40px;">
-        <h3>
-          You can also send your feedback directly to enquiry@prohealthhmo.com
-        </h3>
-      </div>
-
 </ion-content>

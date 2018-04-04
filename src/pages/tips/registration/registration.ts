@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 
 /**
- * Generated class for the FeedbackPage page.
+ * Generated class for the RegistrationPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,13 +11,14 @@ import { EmailComposer } from '@ionic-native/email-composer';
 
 @IonicPage()
 @Component({
-  selector: 'page-feedback',
-  templateUrl: 'feedback.html',
+  selector: 'page-registration',
+  templateUrl: 'registration.html',
 })
-export class FeedbackPage {
+export class RegistrationPage {
 
   name = ""
   phone_number = ""
+  email = ""
   message = ""
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private emailComposer: EmailComposer) {
@@ -25,18 +26,20 @@ export class FeedbackPage {
   }
 
   sendEmail(){
-    let fullMessage = "Name: " + this.name + "<br><br>" + "Phone Number: " + this.phone_number + "<br><br>" +"Message: "+this.message
+    let fullMessage = "Name: "+this.name + "<br><br>" +  "Email: "+this.email + "<br><br>" + "Message: "+this.message
     let email = {
       to: 'enquiry@prohealthhmo.com',
       cc: 'operations@prohealthhmo.com',
-      subject: 'Feedback from mobile app',
+      bcc: this.email,
+      subject: 'Registration Request from mobile app',
       body: fullMessage,
       isHtml: true
     };
     this.emailComposer.open(email);
   }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FeedbackPage');
+    console.log('ionViewDidLoad RegistrationPage');
   }
 
 }

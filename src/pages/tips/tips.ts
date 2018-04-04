@@ -48,12 +48,12 @@ export class TipsPage {
     this.navCtrl.push('FeedbackPage')
   }
   
-  Signup(){
-
+  registrationpage(){
+    this.navCtrl.push('RegistrationPage')
   }
 
   aboutapp(){
-    
+    this.navCtrl.push('AboutAppPage')
   }
 
 }
