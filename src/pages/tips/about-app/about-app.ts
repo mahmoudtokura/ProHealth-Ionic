@@ -16,7 +16,7 @@ import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser'
 })
 export class AboutAppPage {
   
-  url: string = "https://prohealth.vsee.me/u/clinic";
+  url: string = "https://prohealth.vsee.me/";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private inAppBrowser: InAppBrowser) {
     

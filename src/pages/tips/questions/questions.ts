@@ -19,10 +19,10 @@ export class QuestionsPage {
   items = [
     {
       "title":"What is the coverage of medical services under the health insurance scheme",
-      "answer":"Benefit coverage is subject to the content of health plan an enrolee is registered for."
+      "answer":"Benefit coverage is subject to the content of health plan an enrollee is registered for."
     },
     {
-      "title":"What is the maximum number of enrolees that make up a family plan?",
+      "title":"What is the maximum number of enrollees  that make up a family plan?",
       "answer":"Family plan is the principal, spouse and four biological children."
     },
     {
@@ -46,7 +46,7 @@ export class QuestionsPage {
       "answer":"Yes, on the payment of a token."
     },
     {
-      "title":"Can an enrolee give his ID card to another person to access care?",
+      "title":"Can an enrollee give his ID card to another person to access care?",
       "answer":"No. ID card is strictly for the use of holder."
     },
     {
@@ -54,20 +54,20 @@ export class QuestionsPage {
       "answer":"Call 0700PROHEALTH – 0700776432584, fill the complaint form inside this app or send complaint directly to operations@prohealthhmo.com"
     },
     {
-      "title":"In the case of an emergency where the enrolee is not near his health care provider, what will happen?",
-      "answer":"The enrolee should access care at the nearest hospital on the HMO directory or any other hospital and contact us within 48 hour to report the emergency."
+      "title":"In the case of an emergency where the enrollee is not near his health care provider, what will happen?",
+      "answer":"The enrollee should access care at the nearest hospital on the HMO directory or any other hospital and contact us within 48 hour to report the emergency."
     },
     {
       "title":"Is premium paid refundable?",
       "answer":"No."
     },
     {
-      "title":"Can an enrolee access care when he is out of his primary place of residence?",
+      "title":"Can an enrollee access care when he is out of his primary place of residence?",
       "answer":"Call 0700PROHEALTH – 0700776432584 for guide on the nearest hospital on the HMO directory."
     },
     {
       "title":"How do I change my hospital?",
-      "answer":"Fill the change of hospilat form inside this app or send application directly to operations@prohealthhmo.com."
+      "answer":"Fill the change of hospital form inside this app or send application directly to operations@prohealthhmo.com."
     },
     {
       "title":"What is the limit to surgery and surgical care services?",
