@@ -6,54 +6,38 @@
 
 <ion-content class="bgcolor">
   <ion-item text-center>
-      <p>Pull down to refreash</p>
-      <ion-spinner name="bubbles" *ngIf="loading == 0 || !wordPressData"></ion-spinner>
-    </ion-item>
-      
-      <p *ngIf="loadingTime == 0" text-center>{{loadingError}}</p>
-        <ion-refresher (ionRefresh)="doRefresh($event)">
-          <ion-refresher-content pullingIcon="arrow-down" pullingText="pull down" refreshingText="Loading...">
-          </ion-refresher-content>
-        </ion-refresher>
+    <p>Pull down to refreash</p>
+    <ion-spinner
+      name="bubbles"
+      *ngIf="loading == 0 || !wordPressData"
+    ></ion-spinner>
+  </ion-item>
 
-        <ion-card *ngFor="let data of wordPressData">
-          <div (click)="fullPost(data)">
-          <div *ngIf="data.better_featured_image == null; else elseBlock">
-            <img [src]=postImage>
-          </div>
-          <ng-template #elseBlock>
-              <img style="max-height: 400px" [src]=data.better_featured_image.source_url>
-          </ng-template>
-          <ion-card-content>
-            <ion-card-title>
-              {{data.title.rendered }}
-              </ion-card-title>
-            <p [innerHTML] = data.excerpt.rendered text-justify></p>
-          </ion-card-content>
-        </div>
-        </ion-card>
+  <p *ngIf="loadingTime == 0" text-center>{{ loadingError }}</p>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-down"
+      pullingText="pull down"
+      refreshingText="Loading..."
+    >
+    </ion-refresher-content>
+  </ion-refresher>
 
-    <!-- <ion-list *ngFor="let data of wordPressData">
-        <ion-item (click)="fullPost(data)">
-          <ion-avatar item-start>
-            <div *ngIf="data.better_featured_image == null; else elseBlock">
-              <img [src]=postImage>
-            </div>
-            <ng-template #elseBlock>
-                <img style="max-height: 400px" [src]=data.better_featured_image.source_url>
-            </ng-template>
-          </ion-avatar>
-          <ion-grid>
-              <ion-row>
-                <ion-col col-9>
-                    <h2 text-uppercase no-padding no-margin class="ellipsis"> 
-                      {{data.title.rendered }}
-                    </h2>
-                </ion-col>
-                <ion-col col-3 style="color:blue">view</ion-col>
-              </ion-row>
-            </ion-grid>
-          <p [innerHTML] = data.excerpt.rendered text-justify></p>
-        </ion-item>
-      </ion-list> -->
+  <ion-card *ngFor="let data of wordPressData">
+    <div (click)="fullPost(data)">
+      <div *ngIf="data.better_featured_image == null; else elseBlock">
+        <img [src]="postImage" />
+      </div>
+      <ng-template #elseBlock>
+        <img
+          style="max-height: 400px"
+          [src]="data.better_featured_image.source_url"
+        />
+      </ng-template>
+      <ion-card-content>
+        <ion-card-title> {{ data.title.rendered }} </ion-card-title>
+        <p [innerHTML]="data.excerpt.rendered" text-justify></p>
+      </ion-card-content>
+    </div>
+  </ion-card>
 </ion-content>

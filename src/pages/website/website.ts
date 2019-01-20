@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { InAppBrowser, InAppBrowserOptions } from "@ionic-native/in-app-browser";
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import {
+  InAppBrowser,
+  InAppBrowserOptions
+} from "@ionic-native/in-app-browser";
 
 /**
  * Generated class for the WebsitePage page.
@@ -11,30 +14,30 @@ import { InAppBrowser, InAppBrowserOptions } from "@ionic-native/in-app-browser"
 
 @IonicPage()
 @Component({
-  selector: 'page-website',
-  templateUrl: 'website.html',
+  selector: "page-website",
+  templateUrl: "website.html"
 })
 export class WebsitePage {
-  
-  url: string = "http://pro-health.gizodynamics.com.ng/";
+  url: string = "http://prohealthhmo.com.ng/";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private inAppBrowser: InAppBrowser) {
-    
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private inAppBrowser: InAppBrowser
+  ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad WebsitePage');
+    console.log("ionViewDidLoad WebsitePage");
   }
 
   openWebpage() {
     const options: InAppBrowserOptions = {
-      zoom: 'no'
-    }
+      zoom: "no"
+    };
 
     // Opening a URL and returning an InAppBrowserObject
-    this.inAppBrowser.create(this.url, '_system', options);
+    this.inAppBrowser.create(this.url, "_system", options);
 
-   // Inject scripts, css and more with browser.X
+    // Inject scripts, css and more with browser.X
   }
-
 }

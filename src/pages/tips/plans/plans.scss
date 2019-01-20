@@ -1,5 +1,27 @@
 page-plans {
-    .bgcolor{
-        background: color($colors, bgcolor)
-      }
+  .bgcolor {
+    background: color($colors, bgcolor);
+  }
+
+  .plan-card img {
+    width: 50%;
+    height: 50%;
+    //overflow: auto;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .plan-card ion-card-title {
+    width: 50%;
+    height: 50%;
+    //overflow: auto;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
 }

@@ -5,43 +5,61 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar color="primary">
-      <ion-title style="text-align: center">Plans</ion-title>
+    <ion-title style="text-align: center">Plans</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content class="bgcolor">
-    <ion-card>
-      <ion-card-header>
-          <ion-icon name="people" color="primary"></ion-icon> A PLAN FOR EVERYONE
-      </ion-card-header>
-    
-      <ion-card-content>
-          <p align="justify">
-              As a national Health Maintenance Organization, our target market falls under the category of both social health insurance and private health insurance. We also sell customized health plans to meet individual needs.
-          </p>
-          <br><br>
-          <hr>
-          <p align="justify">
-            At ProhealthHMO, we have a variety of plans to fit every lifestyle.
-            From individual to corporate to community plans and if our existing plans to fit you particular situation, 
-            we are able to create custom packages to ensure that none of our clients are left without proper cover.
-          </p>
-            <br><br>
-            <hr>
-          <p align="justify">
-            Check our website for the latest and up to date plans that best fits you, your organization or your community and if your require a special package, 
-            please contact us to make that arrangement. 
-          </p>
-      </ion-card-content>
-    </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-icon name="people" color="primary"></ion-icon> A PLAN FOR EVERYONE
+    </ion-card-header>
 
+    <ion-card-content>
+      <p align="justify">
+        As a national Health Maintenance Organization, our target market falls
+        under the category of both social health insurance and private health
+        insurance. We also sell customized health plans to meet individual
+        needs.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card (click)="goToPlan(diamondUrl)" class="plan-card">
+    <img src="assets/imgs/images/diamond.png" />
+    <ion-card-header>
+      <ion-card-title>Diamond Plan</ion-card-title>
+    </ion-card-header>
+    <ion-card-content> <p>The content for this card</p> </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="goToPlan(rubyUrl)" class="plan-card">
+    <img src="assets/imgs/images/ruby.png" />
+    <ion-card-header>
+      <ion-card-title>Ruby Plan</ion-card-title>
+    </ion-card-header>
+    <ion-card-content> <p>The content for this card</p> </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="goToPlan(emeraldUrl)" class="plan-card">
+    <img src="assets/imgs/images/emerald.png" />
+    <ion-card-header>
+      <ion-card-title>Emerald Plan</ion-card-title>
+    </ion-card-header>
+    <ion-card-content> <p>The content for this card</p> </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="goToPlan(perlUrl)" class="plan-card">
+    <img src="assets/imgs/images/pearl.png" />
+    <ion-card-header>
+      <ion-card-title>Perl Plan</ion-card-title>
+    </ion-card-header>
+    <ion-card-content> <p>The content for this card</p> </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-      <button ion-button full (click)="openWebpage()">Vist our Website</button>
+    <button ion-button full (click)="openWebpage()">Vist our Website</button>
   </ion-toolbar>
 </ion-footer>
