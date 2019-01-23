@@ -21,7 +21,10 @@ export class FeedbackPage {
   phone_number = "";
   message = "";
   currentImage = null;
-  pictureTakenMessage = null;
+  disableSendButton = false;
+  sendButtonText = "Send Email";
+  feedMessage = "";
+  email = {};
 
   constructor(
     public navCtrl: NavController,
@@ -43,7 +46,6 @@ export class FeedbackPage {
     this.camera.getPicture(options).then(
       imageData => {
         this.currentImage = imageData;
-        this.pictureTakenMessage = null;
       },
       err => {
         // Handle error
@@ -52,32 +54,32 @@ export class FeedbackPage {
   }
 
   // TODO: Add support for taking picture and shearing
-  captureImageFromCamera() {
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.FILE_URI,
-      encodingType: this.camera.EncodingType.JPEG,
-      targetWidth: 100,
-      targetHeight: 100,
-      mediaType: this.camera.MediaType.PICTURE,
-      saveToPhotoAlbum: true,
-      correctOrientation: true
-    };
+  // captureImageFromCamera() {
+  //   const options: CameraOptions = {
+  //     quality: 100,
+  //     destinationType: this.camera.DestinationType.FILE_URI,
+  //     encodingType: this.camera.EncodingType.JPEG,
+  //     targetWidth: 100,
+  //     targetHeight: 100,
+  //     mediaType: this.camera.MediaType.PICTURE,
+  //     saveToPhotoAlbum: true,
+  //     correctOrientation: true
+  //   };
 
-    this.camera.getPicture(options).then(
-      imageData => {
-        // imageData is either a base64 encoded string or a file URI
-        // If it's base64 (DATA_URL):
-        let cameraImage = "data:image/jpeg;base64," + imageData;
-        this.pictureTakenMessage =
-          "Picture taken and saved to gallery, please select the image from gallery to attach it";
-        console.log(cameraImage);
-      },
-      err => {
-        // Handle error
-      }
-    );
-  }
+  //   this.camera.getPicture(options).then(
+  //     imageData => {
+  //       // imageData is either a base64 encoded string or a file URI
+  //       // If it's base64 (DATA_URL):
+  //       let cameraImage = "data:image/jpeg;base64," + imageData;
+  //       this.pictureTakenMessage =
+  //         "Picture taken and saved to gallery, please select the image from gallery to attach it";
+  //       console.log(cameraImage);
+  //     },
+  //     err => {
+  //       // Handle error
+  //     }
+  //   );
+  // }
 
   getImgContent(): SafeUrl {
     console.log("From getImgContent method " + this.currentImage);
@@ -96,15 +98,40 @@ export class FeedbackPage {
       "Message: " +
       this.message;
 
-    let email = {
-      to: "enquiry@prohealthhmo.com",
-      cc: "operations@prohealthhmo.com",
-      attachments: [this.currentImage],
-      subject: "Feedback from mobile app",
-      body: fullMessage,
-      isHtml: true
-    };
-    this.emailComposer.open(email);
+    // Setting alias for gmail app.
+    this.emailComposer.addAlias("gmail", "com.google.android.gm");
+
+    // Checking if there is an attachment to the email
+    if (this.currentImage !== null) {
+      this.email = {
+        app: "gmail",
+        to: "enquiry@prohealthhmo.com",
+        cc: "operations@prohealthhmo.com",
+        attachments: [this.currentImage],
+        subject: "Feedback from mobile app",
+        body: fullMessage,
+        isHtml: true
+      };
+    } else {
+      this.email = {
+        app: "gmail",
+        to: "enquiry@prohealthhmo.com",
+        cc: "operations@prohealthhmo.com",
+        subject: "Feedback from mobile app",
+        body: fullMessage,
+        isHtml: true
+      };
+    }
+    // Checking if the form fields are blank
+    if (this.name !== "" && this.phone_number !== "" && this.message !== "") {
+      this.disableSendButton = true;
+      this.sendButtonText = "Email sent!";
+      this.feedMessage = "Email has been sent.";
+
+      this.emailComposer.open(this.email);
+    } else {
+      this.feedMessage = "Please fill all form fields.";
+    }
   }
 
   ionViewDidLoad() {

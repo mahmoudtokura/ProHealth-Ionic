@@ -1,32 +1,32 @@
 page-questions {
-
-    .bgcolor{
-        background: color($colors, bgcolor)
-      }
-  
-      img{
-        max-width: 75%;
-      }
-  
-      .card-subtitle {
-        text-align: center;
-      }
-  
-      .card-background-page {
-  
-            ion-card {
-              position: relative;
-              text-align: center;
-              border: 2px solid rgb(48, 63, 197);
-              border-radius: 50px;
-              background-color: transparent;
-              padding: 20px;
-              max-width: 150px;
-              height: 150px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-          
-          }
+  .bgcolor {
+    background: color($colors, bgcolor);
   }
+
+  img {
+    max-width: 75%;
+  }
+
+  .card-subtitle {
+    text-align: center;
+  }
+
+  .card-background-page {
+    ion-card {
+      position: relative;
+      text-align: center;
+      border: 2px solid rgb(48, 63, 197);
+      border-radius: 50px;
+      background-color: transparent;
+      padding: 20px;
+      max-width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .faq {
+    font-family: "SourceSansProRegular" !important;
+  }
+}

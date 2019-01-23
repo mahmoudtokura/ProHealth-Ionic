@@ -8,7 +8,7 @@ $font-path: "../assets/fonts";
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
-$app-direction: ltr;
+// $app-direction: ltr;
 
 @import "ionic.globals";
 
@@ -69,28 +69,60 @@ $colors: (
 
 // @import "roboto";
 // @import "noto-sans";
+
 @font-face {
-  font-family: "PT Sans";
+  font-family: "MontserratLight";
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/PTSans.woff2");
+  src: url("../assets/Montserrat-Light.ttf");
 }
 
 @font-face {
-  font-family: "Raleway";
-  font-style: semi-bold;
-  font-weight: 600;
-  src: url("../assets/fonts/Raleway.woff2");
+  font-family: "MontserratBlack";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/Montserrat-Black.ttf");
 }
 
-span,
-button,
+@font-face {
+  font-family: "SourceSansPro";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/SourceSansPro-Black.ttf");
+}
+
+@font-face {
+  font-family: "SourceSansProRegular";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/SourceSansPro-Regular.ttf");
+}
+
+h1,
+h2,
+h3,
 h4,
 h5,
 h6,
-p,
-ion-item {
-  font-family: "PT Sans" !important;
+ion-title,
+ion-card-header,
+ion-card-title {
+  font-family: "MontserratLight" !important;
 }
 
-$font-family-base: "Raleway";
+button {
+  font-family: "MontserratBlack" !important;
+}
+
+span,
+p,
+ion-item {
+  font-family: "SourceSansPro" !important;
+}
+
+p,
+ion-card-content,
+ion-input,
+ion-textarea {
+  font-family: "SourceSansProRegular" !important;
+}
